@@ -26,11 +26,6 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 
-import Image from "next/image"
-import logo from '../../public/logo.svg'
-
-import Link from "next/link"
-
 // This is sample data.
 const data = {
   user: {
@@ -165,9 +160,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <Link href="/">
-          <Image src={logo} alt="Logo do Sistema" className="min-w-[154px]"/>
-        </Link>
+        <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
