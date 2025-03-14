@@ -22,11 +22,11 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
 
-  // Defina as rotas onde o Sidebar não deve aparecer
-  const authRoutes = ["/auth/login", "/auth/register"];
+  // Defina as rotas onde o Sidebar deve aparecer
+  const Routes = ["/", "/dashboard", "/contato"];
 
-  // Verifica se a rota atual está nas rotas de autenticação
-  const isAuthPage = authRoutes.includes(pathname);
+  // Verifica se a rota atual está no Routes
+  const isRoutesPage = Routes.includes(pathname);
 
   return (
     <html lang="en">
@@ -37,9 +37,7 @@ export default function RootLayout({
       <body
         className={`${outfitSans.variable} antialiased`}
       >
-        {isAuthPage ? 
-          children 
-        : 
+        {isRoutesPage ? 
           <SidebarProvider>
             <AppSidebar />
             <SidebarInset>
@@ -51,6 +49,10 @@ export default function RootLayout({
               </div>
             </SidebarInset>
           </SidebarProvider>
+        : 
+          <main>
+            {children}
+          </main>
         }
       </body>
     </html>
