@@ -4,8 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Logo from "../../../dashboard/public/logo.svg"
+import { Button } from "@/components/ui/button";
 
-function Home() {
+import { getServerSession } from "next-auth";
+
+async function Home() {
+  const session = await getServerSession();
+
   return (
     <>
       {/* Header */}
@@ -24,7 +29,7 @@ function Home() {
               </Link>
             </div>
             <nav>
-              <ul className="flex gap-4">
+              <ul className="flex items-center gap-4">
                 <li className="hover:underline">
                   <Link href="/dashboard">Dashboard</Link>
                 </li>
@@ -34,6 +39,15 @@ function Home() {
                 <li className="hover:underline">
                   <Link href="/dashboard/contato">Contato</Link>
                 </li>
+                { !session?.user && (
+                  <li className="hover:underline">
+                    <Link href="/auth/login">
+                      <Button type="button" variant="default" className="bg-blue-600 hover:bg-blue-500">
+                        Acessar
+                      </Button>
+                    </Link>
+                  </li>
+                )}
               </ul>
             </nav>
           </div>

@@ -14,49 +14,42 @@ import {
       product: "TailGrids",
       category: "Ui Kits",
       paymentMethod: "Credit Card",
-      cr: "Dashboard",
       totalAmount: "$250.00",
     },
     {
       product: "GrayGrids",
       category: "Templates",
       paymentMethod: "PayPal",
-      cr: "Dashboard",
       totalAmount: "$150.00",
     },
     {
       product: "Uideck",
       category: "Templates",
       paymentMethod: "Bank Transfer",
-      cr: "Dashboard",
       totalAmount: "$350.00",
     },
     {
       product: "FormBold",
       category: "SaaS",
       paymentMethod: "Credit Card",
-      cr: "Dashboard",
       totalAmount: "$450.00",
     },
     {
       product: "NextAdmin",
       category: "Templates",
       paymentMethod: "PayPal",
-      cr: "Dashboard",
       totalAmount: "$550.00",
     },
     {
       product: "FormBuilder",
       category: "Templates",
       paymentMethod: "Bank Transfer",
-      cr: "Dashboard",
       totalAmount: "$200.00",
     },
     {
       product: "AyroUI",
       category: "Templates",
       paymentMethod: "Credit Card",
-      cr: "Dashboard",
       totalAmount: "$300.00",
     },
   ]
@@ -70,8 +63,7 @@ import {
             <TableHead>Products</TableHead>
             <TableHead>Category</TableHead>
             <TableHead>Payment Method</TableHead>
-            <TableHead>Cr</TableHead>
-            <TableHead>Amount</TableHead>
+            <TableHead className="text-right">Amount</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -80,8 +72,7 @@ import {
               <TableCell className="font-medium">{invoice.product}</TableCell>
               <TableCell>{invoice.category}</TableCell>
               <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell>{invoice.cr}</TableCell>
-              <TableCell>{invoice.totalAmount}</TableCell>
+              <TableCell className="text-right">{invoice.totalAmount}</TableCell>
             </TableRow>
           ))}
         </TableBody>

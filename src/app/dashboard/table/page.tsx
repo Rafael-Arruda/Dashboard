@@ -1,6 +1,15 @@
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+
 import { TableDemo } from "@/components/table";
 
-export default function Table() {
+export default async function Table() {
+    const session = await getServerSession();
+
+    if (!session) {
+        redirect("/auth/login")
+    }
+
     return (
         <section>
             <div className="px-6 py-5 border-b">
