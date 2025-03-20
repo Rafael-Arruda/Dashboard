@@ -11,7 +11,7 @@ export default async function Table() {
     }
 
     return (
-        <section>
+        <section className="rounded-2xl border border-gray-200 bg-white">
             <div className="px-6 py-5 border-b">
                 <h2 className="text-base font-medium text-gray-800 dark:text-white/90">Basic Table 5</h2>
             </div>

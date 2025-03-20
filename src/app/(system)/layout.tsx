@@ -12,7 +12,7 @@ export default function DashboardLayout({
             <SidebarInset>
               <Header/>
               <div className="flex flex-1 flex-col gap-4 p-4">
-                <div className="max-w-[1296px] mx-auto w-full h-full rounded-2xl border border-gray-200 bg-white">
+                <div className="max-w-[1296px] mx-auto w-full h-full">
                   {children}
                 </div>
               </div>
