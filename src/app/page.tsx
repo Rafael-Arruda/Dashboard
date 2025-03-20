@@ -34,10 +34,10 @@ async function Home() {
                   <Link href="/dashboard">Dashboard</Link>
                 </li>
                 <li className="hover:underline">
-                  <Link href="/dashboard/table">Tabelas</Link>
+                  <Link href="/table">Tabelas</Link>
                 </li>
                 <li className="hover:underline">
-                  <Link href="/dashboard/contato">Contato</Link>
+                  <Link href="/contato">Contato</Link>
                 </li>
                 { !session?.user && (
                   <li className="hover:underline">
